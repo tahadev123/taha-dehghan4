@@ -1,25 +1,32 @@
-function isPrime(number) {
-  let divisor = 0;
-  if (typeof number !== "number") {
-    return "Invalid argument";
-  } else {
-    if (number === 2) {
-      return true;
-    } else {
-      for (let i = 1; i <= number; i++) {
-        if (number % i === 0) {
-          divisor++;
-        }
-      }
-      if (divisor === 2) {
-        return true;
-      } else {
-        return false;
-      }
+const numbers = [5, 12, 8, 130, 44];
+const sortNumber = [...numbers];
+const lessThan30 = [];
+const stringNumber = [];
+const removeIndex = []
+
+sortNumber.sort(function (a, b) {
+  return a - b;
+});
+sortNumber.reverse();
+
+const smaller = (numbers) => {
+  for (let i = 0; i < numbers.length + 1; i++) {
+    if (numbers[i] < 30) {
+      lessThan30.push(numbers[i]);
     }
   }
-}
+};
 
-console.log(isPrime(2));
-console.log(isPrime(6));
-console.log(isPrime("two"));
+smaller(numbers);
+
+const Total = numbers.reduce((acc, cur) => {
+  const result = acc + cur;
+  return result;
+}, 0);
+
+const numberString = numbers.map((item) => {
+  const result = item.toString();
+  stringNumber.push(result);
+});
+
+console.log(removedIndex);
